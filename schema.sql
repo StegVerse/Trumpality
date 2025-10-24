@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS records (
+  id TEXT PRIMARY KEY,
+  subject TEXT NOT NULL,
+  title TEXT NOT NULL,
+  summary TEXT,
+  category TEXT,
+  topic_cluster TEXT,
+  date_occurred TEXT,
+  date_published TEXT,
+  source_url TEXT NOT NULL,
+  source_type TEXT,
+  source_attribution TEXT,
+  raw_local_path TEXT,
+  verification_status TEXT,
+  source_confidence_score REAL DEFAULT 0.0,
+  replication_links TEXT,
+  tags TEXT,
+  notes TEXT,
+  created_at TEXT DEFAULT (datetime('now')),
+  updated_at TEXT DEFAULT (datetime('now'))
+);
