@@ -1,0 +1,7 @@
+# One URL per line; use only reputable sources or primary docs.
+https://www.reuters.com/
+https://apnews.com/
+https://www.bbc.com/news
+https://www.nytimes.com/
+https://www.washingtonpost.com/
+https://www.courtlistener.com/

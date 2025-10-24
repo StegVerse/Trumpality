@@ -1,0 +1,7 @@
+about: "Relationship graph for Trumpality (entities, events, filings)."
+rules:
+  - "Every row in entities.csv and relations.csv must map to a verifiable source."
+  - "No private info about minors beyond public record."
+outputs:
+  nodes: "freedom/graph_nodes.csv"
+  edges: "freedom/graph_edges.csv"
