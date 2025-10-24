@@ -1,1 +1,5 @@
 edge_id,from_id,to_id,relation,date,filing,source_url,notes
+r_affil_trump_org,e_trump,e_trump_org,affiliation,,,https://www.trump.com/,Public corporate affiliation
+r_ref_doj,e_trump,e_doj,referenced_in,,,https://www.justice.gov/opa,DOJ press releases index (context)
+r_ref_cl,e_trump,e_courtlistener,referenced_in,,,https://www.courtlistener.com/,Court records index (context)
+r_ref_congress,e_trump,e_congress,referenced_in,,,https://www.congress.gov/,Congressional records index (context)
