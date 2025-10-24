@@ -1,0 +1,43 @@
+name: archive-and-monitor
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 8 * * 2,5"  # Tue & Fri 08:00 UTC
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r CORE/requirements.txt
+      - name: Apply schema patch (idempotent)
+        run: |
+          python - <<'PY'
+          import sqlite3, os, sys
+          db = "data/processed/records.sqlite"
+          if not os.path.exists(db):
+            print("No DB yet; run weekly-ingest first."); sys.exit(0)
+          conn = sqlite3.connect(db)
+          try:
+            conn.executescript(open("CORE/schema_patch.sql").read())
+          except Exception as e:
+            print("Schema patch already applied or not needed:", e)
+          conn.commit(); conn.close()
+          PY
+      - name: Archive newest records
+        run: python CORE/archival/archiver.py
+      - name: Monitor link health
+        run: python CORE/archival/monitor_links.py
+      - name: Commit changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -m "archive+monitor: updated snapshots and link health" || echo "no changes"
+          git push
