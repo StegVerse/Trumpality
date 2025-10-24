@@ -1,7 +1,18 @@
-# One URL per line; use only reputable sources or primary docs.
+# Starter, reputable, long-lived URLs (safe for initial ingestion)
+# Replace or append with specific article/docket URLs when ready.
+
 https://www.reuters.com/
 https://apnews.com/
 https://www.bbc.com/news
+https://www.npr.org/
 https://www.nytimes.com/
 https://www.washingtonpost.com/
+
+# Primary/legal/document indexes
 https://www.courtlistener.com/
+https://www.justice.gov/opa
+https://www.congress.gov/
+https://www.uscourts.gov/
+
+# Contextual public records
+https://www.archives.gov/

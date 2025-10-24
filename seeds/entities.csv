@@ -1,0 +1,6 @@
+entity_id,label,type,source_url,notes
+e_trump,Donald J. Trump,person,https://www.whitehouse.gov/about-the-white-house/presidents/donald-j-trump/,Official bio
+e_trump_org,The Trump Organization,org,https://www.trump.com/,Corporate site
+e_doj,United States Department of Justice,org,https://www.justice.gov/,US DOJ
+e_courtlistener,CourtListener,org,https://www.courtlistener.com/,Open court records index
+e_congress,United States Congress,org,https://www.congress.gov/,Official legislative records
