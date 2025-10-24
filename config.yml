@@ -1,0 +1,16 @@
+subject: "Donald J. Trump"
+topic_defaults:
+  clusters:
+    - sexual_misconduct
+    - finance
+    - documents
+    - lawsuits
+    - campaigns
+policies:
+  require_reputable_source: true
+  allow_secondary_if_cites_primary: true
+  ban_memes: true
+free_dom:
+  enabled: true
+  mode: involvement
+  relation_fields: [entity, event, date, filing, source_url]
